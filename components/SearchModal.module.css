@@ -1,0 +1,194 @@
+#search-modal {
+  position: relative;
+}
+
+#search-modal .trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+#search-modal .kbd {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#search-modal .dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1f3a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 640px;
+  z-index: 50;
+  padding: 0;
+  overflow: hidden;
+}
+
+#search-modal .cmd-input {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+}
+
+#search-modal .cmd-input input {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  width: 100%;
+}
+
+#search-modal .cmd-input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#search-modal .list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+#search-modal .empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#search-modal .group {
+  padding: 0.5rem 0;
+}
+
+#search-modal .heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.75rem 1rem 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#search-modal .search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.15s;
+  background-color: transparent;
+  border: none;
+}
+
+#search-modal .search-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#search-modal .search-item[data-selected] {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+#search-modal .coin-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+#search-modal .coin-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#search-modal .coin-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#search-modal .coin-info p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+#search-modal .coin-info p:first-child {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#search-modal .coin-symbol {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+#search-modal .coin-change {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Custom scrollbar for search modal */
+#search-modal .custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+#search-modal .custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#search-modal .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e2833;
+  border-radius: 8px;
+}
+
+#search-modal .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #171a34;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  #search-modal .dialog {
+    width: 95%;
+    max-width: none;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 1rem 1rem 0 0;
+    transform: none;
+  }
+
+  #search-modal .search-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #search-modal .coin-change {
+    align-self: flex-end;
+    margin-top: 0.25rem;
+  }
+}
