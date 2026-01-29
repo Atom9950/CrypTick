@@ -1,7 +1,6 @@
 'use client';
 
 import CandlestickChart from '@/components/CandlestickChart';
-import { useState } from 'react';
 
 interface TrendOverviewSectionProps {
   coinId: string;
@@ -14,7 +13,6 @@ export default function TrendOverviewSection({
   coinData,
   initialOHLCData,
 }: TrendOverviewSectionProps) {
-  const [liveInterval, setLiveInterval] = useState<'1s' | '1m'>('1m');
 
   return (
     <div id="coin-overview" className="!p-0 pb-3 border-b-2 border-dark-400">
@@ -35,8 +33,6 @@ export default function TrendOverviewSection({
         data={initialOHLCData}
         initialPeriod="daily"
         height={360}
-        liveInterval={liveInterval}
-        setLiveInterval={setLiveInterval}
       >
         <h4 className="text-lg md:text-xl font-semibold text-[#e6eef8]">Trend Overview</h4>
       </CandlestickChart>
