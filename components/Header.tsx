@@ -1,19 +1,25 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import { fetcher } from '@/lib/coingecko.actions';
+import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation';
 import HeaderClient from './HeaderClient';
 
-const Header = async () => {
-  let trendingCoins: TrendingCoin[] = [];
+interface HeaderClientProps {
+  trendingCoins: TrendingCoin[];
+}
 
-  try {
-    const response = await fetcher<{ coins: TrendingCoin[] }>('/search/trending', undefined, 300);
-    trendingCoins = response.coins || [];
-  } catch (error) {
-    console.error('Failed to fetch trending coins for search modal:', error);
-  }
+const Header = ({ trendingCoins = [] }: HeaderClientProps) => {
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <header>
@@ -23,13 +29,15 @@ const Header = async () => {
         </Link>
 
         <nav>
-            <Link href='/' className={cn('nav-link', {
-                'is-home': true,
+            <Link href='/' className={cn('nav-link is-home', {
+                'is-active': pathname === '/',
             })}>Home</Link>
 
             <HeaderClient trendingCoins={trendingCoins} />
 
-            <Link href='/coins' className={cn('nav-link')}>All coins</Link>
+            <Link href='/coins' className={cn('nav-link', {
+                'is-active': pathname === '/coins',
+            })}>All coins</Link>
         </nav>
       </div>
     </header>
