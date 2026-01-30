@@ -59,11 +59,16 @@ const SearchItem = ({ coin, onSelect, isActiveName }: SearchItemProps) => {
     : ((coin as TrendingCoin["item"]).data.price_change_percentage_24h?.usd ??
       0);
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <CommandItem
       value={coin.id}
       onSelect={() => onSelect(coin.id)}
       className="search-item"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ backgroundColor: isHovered ? "#0f1316" : "transparent" }}
     >
       <div className="coin-info">
         <Image src={coin.thumb} alt={coin.name} width={40} height={40} />
