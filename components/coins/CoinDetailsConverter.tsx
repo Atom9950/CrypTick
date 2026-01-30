@@ -96,7 +96,7 @@ export default function CoinDetailsConverter({
 
       {/* Currency Output */}
       <div className="output-wrapper">
-        <p className="text-white">{formatCurrency(convertedAmount)}</p>
+        <p className="text-white">{formatCurrency(convertedAmount, undefined, selectedCurrency)}</p>
         <select
           value={selectedCurrency}
           onChange={handleCurrencyChange}
@@ -112,7 +112,7 @@ export default function CoinDetailsConverter({
 
       {/* Exchange Rate */}
       <div className="text-xs text-purple-100/60 text-center pt-2">
-        1 {symbol} = {formatCurrency(currentPrice)} {CURRENCY_MAP[selectedCurrency]}
+        1 {symbol} = {formatCurrency(currentPrice, undefined, selectedCurrency)} {CURRENCY_MAP[selectedCurrency]}
       </div>
     </div>
   );
