@@ -17,14 +17,21 @@ export function formatCurrency(
   }
 
   if (showSymbol === undefined || showSymbol === true) {
-    return value.toLocaleString(undefined, {
+    const currencyCode = currency?.toUpperCase() || 'USD';
+    const formatted = value.toLocaleString('en-US', {
       style: 'currency',
-      currency: currency?.toUpperCase() || 'USD',
+      currency: currencyCode,
       minimumFractionDigits: digits ?? 2,
       maximumFractionDigits: digits ?? 2,
     });
+    
+    // For USD, ensure we show $ instead of US$
+    if (currencyCode === 'USD') {
+      return formatted.replace('US$', '$');
+    }
+    return formatted;
   }
-  return value.toLocaleString(undefined, {
+  return value.toLocaleString('en-US', {
     minimumFractionDigits: digits ?? 2,
     maximumFractionDigits: digits ?? 2,
   });
