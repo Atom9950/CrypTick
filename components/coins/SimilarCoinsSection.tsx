@@ -13,7 +13,7 @@ interface SimilarCoinsSectionProps {
 export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps) {
   const columns: DataTableColumn<CoinMarketData>[] = [
     {
-      header: 'Name',
+      header: 'Coins',
       cellClassName: 'name-cell',
       cell: (coin) => (
         <Link href={`/coins/${coin.id}`}>
@@ -53,9 +53,9 @@ export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps)
     <div id="similar-coins" className="bg-dark-500 rounded-xl overflow-hidden">
       <div className="flex items-center justify-between px-6 py-6 border-b border-purple-100/10">
         <h3 className="text-xl font-semibold text-white">Similar Coins</h3>
-        <button className="text-sm text-purple-100 hover:text-white transition-colors">
+        <p className="text-sm text-purple-100">
           Popular ↓
-        </button>
+        </p>
       </div>
 
       <DataTable
