@@ -53,12 +53,11 @@ export default async function CoinDetailsPage({ params }: NextPageProps) {
     // Fetch similar coins for recommendation section
     const similarCoins = await fetcher<CoinMarketData[]>(`/coins/markets`, {
       vs_currency: 'usd',
-      ids: coinData.market_data ? undefined : '',
       order: 'market_cap_desc',
-      per_page: 5,
+      per_page: 10,
       sparkline: false,
       price_change_percentage: '24h',
-    });
+    }).then(coins => coins.filter(coin => coin.id !== id).slice(0, 5));
 
     return (
       <main className="main-container flex flex-col gap-4 lg:gap-6">
