@@ -17,7 +17,7 @@
 
 <div align="center">
   
-![CrypTick Banner] <img width="1897" height="1089" alt="image" src="https://github.com/user-attachments/assets/bd7ce7c9-c516-4143-9270-32493e78801d" />
+ <img width="1897" height="1089" alt="image" src="https://github.com/user-attachments/assets/bd7ce7c9-c516-4143-9270-32493e78801d" />
 
 
 </div>
@@ -30,7 +30,7 @@ Built with modern web technologies and powered by the comprehensive CoinGecko AP
 
 <div align="center">
   
-![CrypTick Dashboard Preview]<img width="1899" height="1086" alt="image" src="https://github.com/user-attachments/assets/8942d096-4d90-43ca-880b-d030439b460f" />
+<img width="1899" height="1086" alt="image" src="https://github.com/user-attachments/assets/8942d096-4d90-43ca-880b-d030439b460f" />
 
 
 </div>
@@ -75,7 +75,7 @@ CrypTick is a comprehensive cryptocurrency screening platform that provides real
 
 - <div align="center">
   
-  ![CrypTick Dashboard Preview] <img width="1919" height="1085" alt="image" src="https://github.com/user-attachments/assets/d27073b2-771b-4804-9f7e-f681e45c7531" />
+  <img width="1919" height="1085" alt="image" src="https://github.com/user-attachments/assets/d27073b2-771b-4804-9f7e-f681e45c7531" />
 
   
   
@@ -285,11 +285,6 @@ Contributions are what make the open-source community such an amazing place to l
 
 ---
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 ## 👤 Contact
 
@@ -326,6 +321,5 @@ To learn more about the technologies used in this project:
   
   **⭐ Star this repo if you find it helpful!**
   
-  Made with ❤️ by [Atom9950](https://github.com/Atom9950)
   
 </div>
