@@ -203,6 +203,42 @@
     }
   }
 
+  footer {
+    @apply border-t border-dark-400 bg-dark-700 mt-12;
+
+    .inner {
+      @apply flex flex-col gap-8;
+
+      .footer-content {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+      }
+
+      .footer-section {
+        @apply flex flex-col gap-4;
+
+        h4 {
+          @apply font-semibold text-lg text-white;
+        }
+
+        .footer-description {
+          @apply text-purple-100 text-sm max-w-xs;
+        }
+
+        .footer-nav {
+          @apply flex flex-col gap-3;
+
+          a {
+            @apply text-purple-100 hover:text-white transition-colors text-sm;
+          }
+        }
+      }
+
+      .footer-bottom {
+        @apply border-t border-dark-400 pt-6 text-center text-purple-100 text-sm;
+      }
+    }
+  }
+
   #candlestick-chart {
     @apply p-3 mt-5 rounded-lg bg-dark-500;
 
