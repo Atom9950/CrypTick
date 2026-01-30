@@ -13,12 +13,12 @@ interface SimilarCoinsSectionProps {
 export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps) {
   const columns: DataTableColumn<CoinMarketData>[] = [
     {
-      header: 'Coins',
+      header: 'Name',
       cellClassName: 'name-cell',
       cell: (coin) => (
-        <Link href={`/coins/${coin.id}`}>
+        <Link href={`/coins/${coin.id}`} className="flex items-center gap-3">
           <Image src={coin.image} alt={coin.name} height={40} width={40} />
-          <p>{coin.name}</p>
+          <p><strong>{coin.name}</strong></p>
         </Link>
       ),
     },
@@ -30,13 +30,14 @@ export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps)
 
         return (
           <div className={cn('price-change', isTrendingUp ? 'text-green-500' : 'text-red-500')}>
-            <p>
+            <p> <strong>
               {isTrendingUp ? (
                 <TrendingUp width={16} height={16} />
               ) : (
                 <TrendingDown width={16} height={16} />
               )}
               {Math.abs(coin.price_change_percentage_24h).toFixed(2)}%
+              </strong>
             </p>
           </div>
         );
@@ -45,7 +46,7 @@ export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps)
     {
       header: 'Price',
       cellClassName: 'price-cell',
-      cell: (coin) => formatCurrency(coin.current_price),
+      cell: (coin) => <strong>{formatCurrency(coin.current_price)}</strong>
     },
   ];
 
@@ -63,8 +64,8 @@ export default function SimilarCoinsSection({ coins }: SimilarCoinsSectionProps)
         columns={columns}
         rowKey={(coin) => coin.id}
         tableClassName="similar-coins-table"
-        headerCellClassName="py-3!"
-        bodyCellClassName="py-2!"
+        headerCellClassName="py-4!"
+        bodyCellClassName="py-4!"
       />
     </div>
   );
