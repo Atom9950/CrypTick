@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { formatCurrency, formatPercentage, cn, trendingClasses } from '@/lib/utils';
-import { ArrowUp, ArrowDown } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
 interface CoinDetailsHeaderProps {
   name: string;
@@ -44,7 +44,7 @@ export default function CoinDetailsHeader({
         <div>
           <h1 className="text-5xl font-semibold">{formatCurrency(currentPrice)}</h1>
           <div className={cn('badge mt-2 py-1 px-2 rounded text-sm font-medium w-fit', bgClass)}>
-            {isPositive ? <ArrowUp className="w-4 h-4" /> : <ArrowDown className="w-4 h-4" />}
+            {isPositive ? <TrendingUp className={cn("w-4 h-4", textClass)} /> : <TrendingDown className={cn("w-4 h-4", textClass)} />}
             <span className={textClass}>{isPositive ? '+' : ''}{formatPercentage(priceChange24h)}</span>
           </div>
         </div>
